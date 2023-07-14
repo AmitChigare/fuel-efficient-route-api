@@ -33,7 +33,7 @@
         <form method="post">
             {% csrf_token %}
             <label for="pincode">ENTER PINCODE</label><br><br>
-            <input type="text" name="pincode" id="pincode" required placeholder="PINCODE">
+            <input type="text" name="pincode" id="pincode" required placeholder="PINCODE" maxlength="6" minlength="6">
             <input type="hidden" name="latitude" id="latitude" value="">
             <input type="hidden" name="longitude" id="longitude" value="">
             <button type="submit">Let's Go</button>

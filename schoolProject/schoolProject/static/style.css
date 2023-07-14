@@ -73,10 +73,6 @@ body {
     font-weight: 200;
 }
 
-
-
-
-
 .main input {
     background-color: transparent;
     padding: 12px;
@@ -226,6 +222,6 @@ tbody tr.hide td img {
 }
 
 .disabled {
-    color: #484747 !important;
-    /* background-color: transparent !important; */
+    color: rgba(255, 255, 255, 0.389) !important;
+    background-color: rgba(128, 128, 128, 0.344) !important;
 }
