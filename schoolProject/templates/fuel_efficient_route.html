@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel-Efficient Route</title>
+</head>
+
+<body>
+    <h1>Fuel-Efficient Route for Pincode {{ pincode }}</h1>
+    <ul>
+        {% for school, distance in schools %}
+        <li>{{ school.name }} ({{ school.address }}) - {{ distance }} km</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
