@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuel Efficient Route | Pincode</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <script>
         // Get the user's location coordinates
         function getUserLocation() {
@@ -27,14 +29,16 @@
 </head>
 
 <body>
-    <form method="post">
-        {% csrf_token %}
-        <label for="pincode">Enter Pincode:</label>
-        <input type="text" name="pincode" id="pincode" required>
-        <input type="hidden" name="latitude" id="latitude" value="">
-        <input type="hidden" name="longitude" id="longitude" value="">
-        <button type="submit">Find Route</button>
-    </form>
+    <div class="main">
+        <form method="post">
+            {% csrf_token %}
+            <label for="pincode">ENTER PINCODE</label><br><br>
+            <input type="text" name="pincode" id="pincode" required placeholder="PINCODE">
+            <input type="hidden" name="latitude" id="latitude" value="">
+            <input type="hidden" name="longitude" id="longitude" value="">
+            <button type="submit">Let's Go</button>
+        </form>
+    </div>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,16 +7,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuel-Efficient Route</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body>
-    <h1>Fuel-Efficient Route for Pincode: {{ pincode }}</h1>
-    <h4>Your Location: {{origin_name}}</h4>
-    <ul>
-        {% for school, distance in schools %}
-        <li>{{ school.name }} ({{ school.address }}) - {{ distance }} km</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div>
+            <h1>Fuel-Efficient Route for Pincode: {{ pincode }}</h1>
+            <h4>Your Location: {{ origin_name }}</h4>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>School Name</th>
+                            <th>Address</th>
+                            <th>Distance (km)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for school, distance in page_obj %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ school.name }}</td>
+                            <td>{{ school.address }}</td>
+                            <td>{{ distance }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </section>
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% else %}
+                <a class="disabled" href="#">Previous</a>
+                {% endif %}
+
+                <!-- <span class="current-page">{{ page_obj.number }}</span> -->
+                {% for i in page_obj.paginator.page_range %}
+                {% if page_obj.number == i %}
+                <a class="page-link active" href="#">{{i}}</a>
+                {% else %}
+                <a class="page-link" href="?page={{i}}">{{i}}</a>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% else %}
+                <a class="disabled" href="#">Next</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
