@@ -76,9 +76,10 @@ body {
 .main input {
     background-color: transparent;
     padding: 12px;
+    /* padding-left: 0; */
     border: 0;
     border-bottom: 0.2px solid white;
-    width: 535px;
+    width: 555px;
     color: white;
     background: linear-gradient(90deg,
             hsl(195deg 100% 50%) 15%,
@@ -166,6 +167,7 @@ tbody tr:nth-child(even) {
 
 tbody {
     color: black;
+    font-size: 15px;
 }
 
 tbody tr {
@@ -224,4 +226,5 @@ tbody tr.hide td img {
 .disabled {
     color: rgba(255, 255, 255, 0.389) !important;
     background-color: rgba(128, 128, 128, 0.344) !important;
+    cursor: not-allowed !important;
 }
