@@ -21,8 +21,8 @@
                         <tr>
                             <th>Sr.No</th>
                             <th>School Name</th>
-                            <th>Address</th>
-                            <th>Distance (km)</th>
+                            <th>Schol Address</th>
+                            <th>Distance</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,7 +31,7 @@
                             <td>{{ forloop.counter }}</td>
                             <td>{{ school.name }}</td>
                             <td>{{ school.address }}</td>
-                            <td>{{ distance }}</td>
+                            <td>{{ distance }} Km</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -59,6 +59,9 @@
                 {% else %}
                 <a class="disabled" href="#">Next</a>
                 {% endif %}
+            </div>
+            <div>
+                <button class="homeBtn"><a href="{% url 'home' %}">Home</a></button>
             </div>
         </div>
     </div>
