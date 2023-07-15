@@ -37,6 +37,9 @@
    $ python manage.py runserver
    ```
 
+7. Creating Dummy Data:
+   Uncomment the Code in "schoolProject > schoolApp > views.py > home" from line 43-58 to create some dummy data in the database. Please ensure you hit the base    url [Home Page](http://localhost:8000) for some 4-5 times.
+
 #### Admin Panel:
 
 - Admin Panel has the functionality to have access over all the Entries and Users. Do check it out to have more control over the api. [Admin Panel](http://localhost:8000/admin)
